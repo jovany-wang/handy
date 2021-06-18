@@ -34,7 +34,7 @@ endif(CMAKE_HOST_APPLE)
 
 option(BUILD_HANDY_SHARED_LIBRARY "Build Handy Shared Library" OFF)
 option(BUILD_HANDY_STATIC_LIBRARY "Build Handy Shared Library" ON)
-option(BUILD_HANDY_EXAMPLES "Build Handy Examples" OFF)
+option(BUILD_HANDY_EXAMPLES "Build Handy Examples" ON)
 
 ##Handy Shared Library
 if(BUILD_HANDY_SHARED_LIBRARY)
@@ -103,6 +103,8 @@ if(BUILD_HANDY_EXAMPLES)
     add_handy_executable(write-on-empty examples/write-on-empty.cc)
     add_handy_executable(10m-cli 10m/10m-cli.cc)
     add_handy_executable(10m-svr 10m/10m-svr.cc)
+    add_handy_executable(handy-ssl 10m/ssl-svr.cc)
+    add_handy_executable(handy-ssl 10m/ssl-cli.cc)
 
     if(CMAKE_HOST_APPLE)
         add_handy_executable(kqueue raw-examples/kqueue.cc)
